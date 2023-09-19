@@ -2,21 +2,16 @@
 <html>
     <head>
         <title>Camisetas personalizadas</title>
-        <!-- <style>
-        /* Tu estilo CSS existente aquí */
-
-    </style> -->
-    <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <header>
             <h1>Camisetas personalizadas</h1>
         </header>
 
-            <div id="app" data-v-app="" style="text-align: center;">
-        <!-- Aquí se mostrará el contenido generado por Vue -->
-        {{ mensaje }}
-    </div>
+        <div id="app" data-v-app="" style="text-align: center;">
+            {{ mensaje }}
+        </div>
 
         <nav>
             <ul>
@@ -50,14 +45,12 @@
 
             <section id="ubicacion">
                 <h2>Ubicación</h2>
-                <p>Nuestra tienda se encuentra en la calle 123, en la ciudad de
-                    XYZ.</p>
+                <p>Nuestra tienda se encuentra en la calle 123, en la ciudad de XYZ.</p>
             </section>
 
             <section id="reservas">
                 <h2>Reservas</h2>
-                <p>Para hacer una reserva, por favor llámenos al 555-555-5555 o
-                    envíenos un correo electrónico a info@bicyclerentals.com</p>
+                <p>Para hacer una reserva, por favor llámenos al 555-555-5555 o envíenos un correo electrónico a info@bicyclerentals.com</p>
             </section>
         </main>
         <footer>
@@ -65,273 +58,164 @@
         </footer>
 
         <!-- Agrega el script para cargar Vue 3 desde CDN -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/vue@3.2.0/dist/vue.global.prod.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@3.2.0/dist/vue.global.prod.js"></script>
 
         <!-- Agrega tu archivo de configuración de Vue Router y otros scripts de JavaScript aquí -->
         <script src="router.js"></script>
 
         <script>
-        // Crear una nueva instancia de Vue
-        const app = Vue.createApp({
-            data() {
-                return {
-                    mensaje: '¡Hola, mundo desde Vue 3!',
-                    
+            // Crear una nueva instancia de Vue
+            const app = Vue.createApp({
+                data() {
+                    return {
+                        mensaje: '¡Hola, mundo desde Vue 3!',
+                    }
                 }
-            }
-        })
+            })
 
-        // Montar la aplicación Vue en un elemento HTML existente
-        app.mount('#app')
-    </script>
+            // Montar la aplicación Vue en un elemento HTML existente
+            app.mount('#app')
+        </script>
 
         <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const bicicletasContenedor = document.getElementById("bicicletas-contenedor");
-
-            // Obtener los datos de las bicicletas (simulado con un objeto en lugar de una solicitud fetch)
-            const data = {
-                bicicletas: [
-       {
-            nombre: "ATOMIC 150 CA6424",
-            modelo: "Camisetas Manga Corta",
-            img: "img/camisetas-mangacorta/6502_100_1_1.jpg",
-            precio: 5
-        },
-        {
-            nombre: "JAMAICA CA6627",
-            modelo: "Camisetas Manga Corta",
-            img: "img/camisetas-mangacorta/6550_96_1_1.jpg",
-            precio: 7
-        },
-        {
-            nombre: "BEAGLE CA6554",
-            modelo: "Camisetas Manga Corta",
-            img: "img/camisetas-mangacorta/6554_98_1_1.jpg",
-            precio: 3
-        },
-        {
-            nombre: "CAPRI CA6683",
-            modelo: "Camisetas Manga Corta",
-            img: "img/camisetas-mangacorta/6627_48_1_1.jpg",
-            precio: 5
-        },
-        {
-            nombre: "STAFFORD CA6681",
-            modelo: "Camisetas Manga Corta",
-            img: "img/camisetas-mangacorta/6681_07_1_1.jpg",
-            precio: 7
-        },
-        {
-            nombre: "DOGO PREMIUM CA6502",
-            modelo: "Camisetas Manga Corta",
-            img: "img/camisetas-mangacorta/6683_126_1_1.jpg",
-            precio: 3
-        },
-        {
-            nombre: "BRACO CA6550",
-            modelo: "Camisetas Manga Corta",
-            img: "img/camisetas-mangacorta/6690_01_1_1.jpg",
-            precio: 5
-        },
-        {
-            nombre: "GOLDEN WOMAN CA6696",
-            modelo: "Camisetas Manga Corta",
-            img: "img/camisetas-mangacorta/6696_98_1_1.jpg",
-            precio: 7
-        },
-        {
-            nombre: "GOLDEN CA6690",
-            modelo: "Camisetas Manga Corta",
-            img: "img/camisetas-mangacorta/6698_264_1_1.jpg",
-            precio: 3
-        },
-        {
-            nombre: "BREDA CA6698",
-            modelo: "Camisetas Manga Corta",
-            img: "img/camisetas-mangacorta/atomic.jpg",
-            precio: 5
-        },
-        {
-            nombre: "BRENDA CA6535",
-            modelo: "Camisetas De Tirantes",
-            img: "img/camisetas-tirantes/BRENDA CA6535.jpg",
-            precio: 5
-        },
-        {
-            nombre: "carolinaca6517",
-            modelo: "Camisetas De Tirantes",
-            img: "img/camisetas-tirantes/carolinaca6517.jpg",
-            precio: 5
-        },
-        {
-            nombre: "NARA CA6536",
-            modelo: "Camisetas De Tirantes",
-            img: "img/camisetas-tirantes/NARA CA6536.jpg",
-            precio: 5
-        },
-        {
-            nombre: "TEXAS CA6545",
-            modelo: "Camisetas De Tirantes",
-            img: "img/camisetas-tirantes/TEXAS CA6545.jpg",
-            precio: 5
-        },
-        {
-            nombre: "BABY L",
-            modelo: "Camisetas Manga Larga",
-            img: "img/camisetas-manga-larga/ BABY L.jpg",
-            precio: 5
-        },
-        {
-            nombre: "EXTREME CA1217",
-            modelo: "Camisetas Manga Larga",
-            img: "img/camisetas-manga-larga/EXTREME CA1217.jpg",
-            precio: 5
-        },
-        {
-            nombre: "EXTREME WOMAN C",
-            modelo: "Camisetas Manga Larga",
-            img: "img/camisetas-manga-larga/EXTREME WOMAN C.jpg",
-            precio: 5
-        },
-        {
-    nombre: "HONEY L",
-    modelo: "Camisetas Manga Larga",
-    img: "img/camisetas-manga-larga/HONEY L.jpg",
-    precio: 5
-},
-{
-    nombre: "POINTER  CA1204",
-    modelo: "Camisetas Manga Larga",
-    img: "img/camisetas-manga-larga/POINTER  CA1204.jpg",
-    precio: 5
-},
-{
-    nombre: "SHIBA CA1219",
-    modelo: "Camisetas Manga Larga",
-    img: "img/camisetas-manga-larga/SHIBA CA1219.jpg",
-    precio: 5
-},
-{
-    nombre: "Rockrider",
-    modelo: "Bicicleta de montaña",
-    img: "img/1-bicicleta.png",
-    precio: 5
-},
-{
-    nombre: "Specialized",
-    modelo: "Bicicleta de carretera",
-    img: "img/2-bicicleta.png",
-    precio: 7
-},
-{
-    nombre: "Trek",
-    modelo: "Bicicleta de paseo",
-    img: "img/3-bicicleta.png",
-    precio: 3
-},
-{
-    nombre: "Giant",
-    modelo: "Bicicleta de montaña",
-    img: "img/4-bicicleta.png",
-    precio: 5
-},
-{
-    nombre: "Cannondale",
-    modelo: "Bicicleta de carretera",
-    img: "img/5-bicicleta.png",
-    precio: 7
-},
-{
-    nombre: "Scott",
-    modelo: "Bicicleta de paseo",
-    img: "img/6-bicicleta.png",
-    precio: 3
-},
-{
-    nombre: "Cube",
-    modelo: "Bicicleta de montaña",
-    img: "img/7-bicicleta.png",
-    precio: 5
-},
-{
-    nombre: "Bianchi",
-    modelo: "Bicicleta de carretera",
-    img: "img/8-bicicleta.png",
-    precio: 7
-},
-{
-    nombre: "Merida",
-    modelo: "Bicicleta de paseo",
-    img: "img/9-bicicleta.png",
-    precio: 3
-},
-{
-    nombre: "Kona",
-    modelo: "Bicicleta de montaña",
-    img: "img/10-bicicleta.png",
-    precio: 5
-}
-                    
-                    // Agrega más bicicletas aquí
-                ],
-            };
-
-            // Almacenar los datos en una variable global
-            window.bicicletas = data.bicicletas;
-
-            // Función para mostrar las bicicletas en la página
-            function mostrarBicicletas() {
+            document.addEventListener("DOMContentLoaded", function () {
                 const bicicletasContenedor = document.getElementById("bicicletas-contenedor");
-                bicicletasContenedor.innerHTML = "";
 
-                // Obtener los valores seleccionados en los filtros
-                const filtroModelo = document.getElementById("filtro-modelo").value;
-                const filtroPrecio = parseFloat(document.getElementById("filtro-precio").value);
+                // Obtener los datos de las bicicletas (simulado con un objeto en lugar de una solicitud fetch)
+                const data = {
+                    bicicletas: [
+                        {
+                            nombre: "ATOMIC 150 CA6424",
+                            modelo: "Camisetas Manga Corta",
+                            img: "img/camisetas-mangacorta/6502_100_1_1.jpg",
+                            precio: 5
+                        },
+                        {
+                            nombre: "BRENDA CA6535",
+                            modelo: "Camisetas De Tirantes",
+                            img: "img/camisetas-tirantes/BRENDA CA6535.jpg",
+                            precio: 5
+                        },
+                        {
+                            nombre: "EXTREME CA1217",
+                            modelo: "Camisetas Manga Larga",
+                            img: "img/camisetas-manga-larga/EXTREME CA1217.jpg",
+                            precio: 5
+                        },
+                        {
+                            nombre: "Rockrider",
+                            modelo: "Bicicleta de montaña",
+                            img: "img/1-bicicleta.png",
+                            precio: 5
+                        },
+                        {
+                            nombre: "Specialized",
+                            modelo: "Bicicleta de carretera",
+                            img: "img/2-bicicleta.png",
+                            precio: 7
+                        },
+                        {
+                            nombre: "Trek",
+                            modelo: "Bicicleta de paseo",
+                            img: "img/3-bicicleta.png",
+                            precio: 3
+                        },
+                    ],
+                };
 
-                // Recorrer cada bicicleta
-                window.bicicletas.forEach(function (bicicleta) {
-                    // Comprobar si la bicicleta cumple con los criterios de los filtros
-                    if ((filtroModelo === "" || bicicleta.modelo === filtroModelo) && (filtroPrecio === 0 || bicicleta.precio <= filtroPrecio)) {
-                        // Crear un elemento div para la bicicleta
-                        const bicicletaDiv = document.createElement("div");
-                        bicicletaDiv.classList.add("bicicleta");
-                        
-                        // Crear una imagen para la bicicleta
-                        const bicicletaImg = document.createElement("img");
-                        bicicletaImg.src = bicicleta.img; // Asegúrate de que la ruta sea correcta
-                        bicicletaImg.alt = bicicleta.modelo;
-                        bicicletaDiv.appendChild(bicicletaImg);
+                // Almacenar los datos en una variable global
+                window.bicicletas = data.bicicletas;
 
-                        // Crear un h3 para el nombre de la bicicleta
-                        const bicicletaNombre = document.createElement("h3");
-                        bicicletaNombre.innerHTML = bicicleta.nombre;
-                        bicicletaDiv.appendChild(bicicletaNombre);
+                // Función para mostrar las bicicletas en la página
+                function mostrarBicicletas() {
+                    const bicicletasContenedor = document.getElementById("bicicletas-contenedor");
+                    bicicletasContenedor.innerHTML = "";
 
-                        // Crear un p para el modelo de la bicicleta
-                        const bicicletaModel = document.createElement("p");
-                        bicicletaModel.innerHTML = bicicleta.modelo;
-                        bicicletaDiv.appendChild(bicicletaModel);
+                    // Obtener los valores seleccionados en los filtros
+                    const filtroModelo = document.getElementById("filtro-modelo").value;
+                    const filtroPrecio = parseFloat(document.getElementById("filtro-precio").value);
 
-                        // Crear un p para el precio de la bicicleta
-                        const bicicletaPrice = document.createElement("p");
-                        bicicletaPrice.innerHTML = "$" + bicicleta.precio;
-                        bicicletaDiv.appendChild(bicicletaPrice);
+                    // Crear un conjunto para rastrear modelos únicos de camisetas y bicicletas
+                    const modelosCamisetas = new Set();
+                    const modelosBicicletas = new Set();
 
-                        // Agregar el elemento div a la página
-                        bicicletasContenedor.appendChild(bicicletaDiv);
-                    }
-                });
-            }
+                    // Recorrer cada bicicleta
+                    window.bicicletas.forEach(function (bicicleta) {
+                        // Comprobar si la bicicleta cumple con los criterios de los filtros
+                        if ((filtroModelo === "" || bicicleta.modelo === filtroModelo) && (filtroPrecio === 0 || bicicleta.precio <= filtroPrecio)) {
+                            // Verificar si es una camiseta o bicicleta y si es un modelo único
+                            if (bicicleta.modelo.startsWith("Camisetas")) {
+                                modelosCamisetas.add(bicicleta.modelo);
+                            } else {
+                                modelosBicicletas.add(bicicleta.modelo);
+                            }
+                        }
+                    });
 
-            // Agregar eventos a los filtros para que al cambiar su valor, se vuelva a mostrar las bicicletas
-            document.getElementById("filtro-modelo").addEventListener("change", mostrarBicicletas);
-            document.getElementById("filtro-precio").addEventListener("change", mostrarBicicletas);
+                    // Mostrar una imagen de cada modelo de camiseta
+                    modelosCamisetas.forEach(function (modelo) {
+                        const camiseta = window.bicicletas.find(bicicleta => bicicleta.modelo === modelo);
+                        if (camiseta) {
+                            const camisetaDiv = document.createElement("div");
+                            camisetaDiv.classList.add("bicicleta");
 
-            // Mostrar las bicicletas al cargar la página
-            mostrarBicicletas();
-        });
-    </script>
+                            const camisetaImg = document.createElement("img");
+                            camisetaImg.src = camiseta.img;
+                            camisetaImg.alt = camiseta.modelo;
+                            camisetaDiv.appendChild(camisetaImg);
+
+                            const camisetaNombre = document.createElement("h3");
+                            camisetaNombre.innerHTML = camiseta.nombre;
+                            camisetaDiv.appendChild(camisetaNombre);
+
+                            const camisetaModel = document.createElement("p");
+                            camisetaModel.innerHTML = camiseta.modelo;
+                            camisetaDiv.appendChild(camisetaModel);
+
+                            const camisetaPrice = document.createElement("p");
+                            camisetaPrice.innerHTML = "$" + camiseta.precio;
+                            camisetaDiv.appendChild(camisetaPrice);
+
+                            bicicletasContenedor.appendChild(camisetaDiv);
+                        }
+                    });
+
+                    // Mostrar una imagen de cada modelo de bicicleta
+                    modelosBicicletas.forEach(function (modelo) {
+                        const bicicleta = window.bicicletas.find(bicicleta => bicicleta.modelo === modelo);
+                        if (bicicleta) {
+                            const bicicletaDiv = document.createElement("div");
+                            bicicletaDiv.classList.add("bicicleta");
+
+                            const bicicletaImg = document.createElement("img");
+                            bicicletaImg.src = bicicleta.img;
+                            bicicletaImg.alt = bicicleta.modelo;
+                            bicicletaDiv.appendChild(bicicletaImg);
+
+                            const bicicletaNombre = document.createElement("h3");
+                            bicicletaNombre.innerHTML = bicicleta.nombre;
+                            bicicletaDiv.appendChild(bicicletaNombre);
+
+                            const bicicletaModel = document.createElement("p");
+                            bicicletaModel.innerHTML = bicicleta.modelo;
+                            bicicletaDiv.appendChild(bicicletaModel);
+
+                            const bicicletaPrice = document.createElement("p");
+                            bicicletaPrice.innerHTML = "$" + bicicleta.precio;
+                            bicicletaDiv.appendChild(bicicletaPrice);
+
+                            bicicletasContenedor.appendChild(bicicletaDiv);
+                        }
+                    });
+                }
+
+                // Agregar eventos a los filtros para que al cambiar su valor, se vuelva a mostrar las bicicletas
+                document.getElementById("filtro-modelo").addEventListener("change", mostrarBicicletas);
+                document.getElementById("filtro-precio").addEventListener("change", mostrarBicicletas);
+
+                // Mostrar las bicicletas al cargar la página
+                mostrarBicicletas();
+            });
+        </script>
     </body>
 </html>
